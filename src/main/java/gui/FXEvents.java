@@ -24,20 +24,7 @@ public class FXEvents extends Application {
         stage.setScene(scene);
         stage.show();
 
-        button.setOnMouseClicked(new MouseLabelEventHandler(label));
+        button.setOnMouseClicked(mouseEvent -> label.setText(mouseEvent.toString()));
 
-    }
-
-    private class MouseLabelEventHandler implements EventHandler<MouseEvent> {
-        private final Label label;
-
-        public MouseLabelEventHandler(Label label) {
-            this.label = label;
-        }
-
-        @Override
-        public void handle(MouseEvent mouseEvent) {
-            label.setText(mouseEvent.toString());
-        }
     }
 }
