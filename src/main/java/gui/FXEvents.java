@@ -1,6 +1,8 @@
 package gui;
 
 import javafx.application.Application;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -23,8 +25,8 @@ public class FXEvents extends Application {
         Scene scene = new Scene(pane, 800,600);
         stage.setScene(scene);
         stage.show();
-
         button.setOnMouseClicked(mouseEvent -> label.setText(mouseEvent.toString()));
+        pane.setOnKeyPressed(keyEvent -> label.setText(keyEvent.getCode().toString()));
 
     }
 }
