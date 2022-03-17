@@ -1,9 +1,11 @@
 package gui;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
@@ -26,4 +28,16 @@ public class FXEvents extends Application {
 
     }
 
+    private class MouseLabelEventHandler implements EventHandler<MouseEvent> {
+        private final Label label;
+
+        public MouseLabelEventHandler(Label label) {
+            this.label = label;
+        }
+
+        @Override
+        public void handle(MouseEvent mouseEvent) {
+            label.setText(mouseEvent.toString());
+        }
+    }
 }
