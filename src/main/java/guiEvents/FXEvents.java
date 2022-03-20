@@ -1,13 +1,11 @@
-package gui;
+package guiEvents;
 
 import javafx.application.Application;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
@@ -31,9 +29,7 @@ public class FXEvents extends Application {
             label.setText(mouseEvent.toString());
             number.set(number.get()+1);
         });
-        number.addListener(num->{
-            counter.setText(String.valueOf(number.get()));
-        });
+        number.addListener(num-> counter.setText(String.valueOf(number.get())));
         pane.setOnKeyPressed(keyEvent -> label.setText(keyEvent.getCode().toString()));
 
     }
