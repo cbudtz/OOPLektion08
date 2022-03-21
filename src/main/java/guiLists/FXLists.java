@@ -3,6 +3,7 @@ package guiLists;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
@@ -29,7 +30,9 @@ public class FXLists extends Application {
             comboBox.getItems().clear();
             comboBox.getItems().addAll(strings);
         });
-        flowPane.getChildren().addAll(textField);
+        ListView<String> listView = new ListView<>();
+        listView.getItems().addAll(fruits);
+        flowPane.getChildren().addAll(textField, listView);
         Scene scene = new Scene(flowPane, 800, 600);
         stage.setScene(scene);
         stage.show();
